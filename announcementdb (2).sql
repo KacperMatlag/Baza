@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Lis 04, 2023 at 09:05 PM
+-- Generation Time: Dec 01, 2023 at 10:41 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `announcement` (
   `ID` int(10) UNSIGNED NOT NULL,
   `Title` varchar(100) NOT NULL,
-  `Description` varchar(500) NOT NULL,
+  `Description` varchar(1000) NOT NULL,
   `JobPositionID` int(11) UNSIGNED NOT NULL,
   `JobLevelID` int(10) UNSIGNED DEFAULT NULL,
   `TypeOfContractID` int(10) UNSIGNED DEFAULT NULL,
@@ -40,9 +40,9 @@ CREATE TABLE `announcement` (
   `ExpirationDate` date NOT NULL,
   `MinWage` int(11) NOT NULL,
   `MaxWage` int(11) NOT NULL,
-  `Requirements` varchar(500) NOT NULL,
+  `Requirements` varchar(1000) NOT NULL,
   `Responsibilities` varchar(1000) NOT NULL,
-  `WhatTheEmployerOffers` varchar(500) NOT NULL,
+  `WhatTheEmployerOffers` varchar(1000) NOT NULL,
   `CompanyID` int(10) UNSIGNED NOT NULL,
   `CreatedAt` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -52,8 +52,7 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobLevelID`, `TypeOfContractID`, `WorkingTimeID`, `WorkTypeID`, `WorkCategoryID`, `ExpirationDate`, `MinWage`, `MaxWage`, `Requirements`, `Responsibilities`, `WhatTheEmployerOffers`, `CompanyID`, `CreatedAt`) VALUES
-(1, 'Job Title 1', 'Description for Job 1', 1, 1, 1, 1, 1, 1, '2023-11-01', 50000, 80000, 'Requirements for Job 1', '', 'What the employer offers for Job 1', 1, '2023-10-29'),
-(2, 'Job Title 2', 'Description for Job 2', 2, 2, 2, 2, 2, 2, '2023-11-15', 60000, 90000, 'Requirements for Job 2', '', 'What the employer offers for Job 2', 2, '2023-10-29'),
+(2, 'Job Title 2', 'Description for Job 2', 2, 2, 2, 2, 2, 2, '2023-11-02', 60000, 90000, 'Requirements for Job 2', '', 'What the employer offers for Job 2', 2, '2023-10-29'),
 (3, 'Front-end Developer', 'Build user interfaces and create amazing user experiences.', 4, 2, 1, 2, 1, 2, '2023-11-25', 70000, 100000, 'Experience with React and JavaScript required.', '', 'Flexible work environment and training opportunities.', 1, '2023-10-29'),
 (4, 'HR Specialist', 'Join our HR team and contribute to employee success.', 1, 1, 2, 1, 2, 3, '2023-11-30', 60000, 90000, 'Experience in HR operations and recruitment preferred.', '', 'Competitive salary and comprehensive benefits.', 3, '2023-10-29'),
 (5, 'Graphic Designer', 'Create visually appealing designs for our brand.', 3, 2, 1, 1, 1, 1, '2023-12-05', 55000, 80000, 'Proficient in Adobe Creative Suite.', '', 'Artistic and collaborative work environment.', 2, '2023-10-29'),
@@ -63,7 +62,10 @@ INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobL
 (9, 'Financial Analyst', 'Analyze financial data and provide insights for decision-making.', 2, 2, 1, 1, 2, 2, '2023-12-25', 70000, 100000, 'Bachelor\'s degree in Finance or related field required.', '', 'Competitive salary and career advancement opportunities.', 1, '2023-10-29'),
 (10, 'Customer Support Specialist', 'Assist customers and provide exceptional support.', 1, 1, 2, 1, 2, 3, '2023-12-30', 55000, 80000, 'Strong interpersonal skills and patience required.', '', 'Health and wellness programs available.', 3, '2023-10-29'),
 (11, 'Product Manager', 'Lead the development and launch of new products.', 4, 2, 1, 2, 1, 2, '2024-01-05', 80000, 120000, 'Proven experience in product management and strategic planning.', '', 'Competitive salary and stock options.', 2, '2023-10-29'),
-(12, 'Quality Assurance Engineer', 'Ensure the quality of our software products.', 3, 1, 2, 1, 1, 1, '2024-01-10', 60000, 90000, 'Experience in software testing and knowledge of testing tools.', '', 'Professional development and growth opportunities.', 1, '2023-10-29');
+(12, 'Quality Assurance Engineer', 'Ensure the quality of our software products.', 3, 1, 2, 1, 1, 1, '2024-01-10', 60000, 90000, 'Experience in software testing and knowledge of testing tools.', '', 'Professional development and growth opportunities.', 1, '2023-10-29'),
+(13, '123', '123', 1, 1, 1, 1, 1, 1, '2023-12-10', 1, 0, '3131', '', '311313', 1, '2023-11-11'),
+(14, 'Jakas super robota', 'Serio ci mowie', 2, 9, 2, 1, 1, 1, '2023-12-04', 123, 456, 'duze', '', 'zadne', 1, '2023-11-11'),
+(15, 'AAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAA', 1, 1, 1, 1, 1, 1, '2023-11-30', 1, 2, 'aAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAA', 1, '2023-11-29');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ INSERT INTO `categorywithpositions` (`ID`, `JobPositionID`, `WorkCategoryID`) VA
 
 CREATE TABLE `company` (
   `ID` int(10) UNSIGNED NOT NULL,
-  `Name` varchar(50) NOT NULL,
+  `Name` varchar(100) NOT NULL,
   `CompanyLocationID` int(10) UNSIGNED NOT NULL,
   `Map` varchar(500) NOT NULL,
   `Description` varchar(500) DEFAULT NULL,
@@ -133,7 +135,8 @@ INSERT INTO `company` (`ID`, `Name`, `CompanyLocationID`, `Map`, `Description`, 
 (8, 'EducationHub Institute', 3, '', 'Instytut edukacyjny oferujący różnorodne kursy i szkolenia.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
 (9, 'TelecomConnect Solutions', 18, '', 'Specjaliści w dziedzinie telekomunikacji i sieci.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
 (10, 'IndustryInnovators Ltd.', 12, '', 'Innowacyjne rozwiązania dla przemysłu.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(11, 'SalesForce Experts', 7, '', 'Zespołowi eksperci ds. sprzedaży i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png');
+(11, 'SalesForce Experts', 7, '', 'Zespołowi eksperci ds. sprzedaży i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(12, 'Firma', 0, '', '123', '123');
 
 -- --------------------------------------------------------
 
@@ -201,7 +204,7 @@ INSERT INTO `joblevel` (`ID`, `Name`) VALUES
 --
 
 CREATE TABLE `jobposition` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `ID` int(11) UNSIGNED NOT NULL,
   `Name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -209,7 +212,7 @@ CREATE TABLE `jobposition` (
 -- Dumping data for table `jobposition`
 --
 
-INSERT INTO `jobposition` (`id`, `Name`) VALUES
+INSERT INTO `jobposition` (`ID`, `Name`) VALUES
 (8, 'Analityk Finansowy'),
 (13, 'Artysta/Artystka'),
 (14, 'Dziennikarz/Dziennikarka'),
@@ -280,7 +283,9 @@ CREATE TABLE `profile` (
 INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNumber`, `ProfilePicture`, `AddressID`, `ProfessionalSummary`, `CurrentJobPositionID`, `CurrentJobPositionDescription`, `Skills`) VALUES
 (2, 'Adam', 'Kowalski', '2023-10-01', 'aa', '+48693202', 'aa', 1, 'aa', NULL, NULL, ''),
 (3, 'Adam', 'Kowalski', '2023-10-01', 'aa', '+4869320', 'aa', 1, 'aa', NULL, NULL, ''),
-(4, 'John', 'Doe', '1990-01-01', 'john.doe@example.com', '123456789', 'default.jpg', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', NULL, NULL, '');
+(4, 'John', 'Doe', '1990-01-01', 'john.doe@example.com', '123456789', 'default.jpg', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', NULL, NULL, ''),
+(45, 'Adam', 'Kowalski', NULL, 'adam@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 'Kowalski', 'Adam', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -358,7 +363,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
 (2, 'Admin', 'Admin', 2),
-(3, 'user48', 'password59', 4);
+(3, 'user48', 'password59', 4),
+(55, 'JakisU', '$2b$10$wlMoHHn/Xb5WninjUj7f6.iqFhl7XyDX.Ybr0wGsXbT', 55);
 
 -- --------------------------------------------------------
 
@@ -575,7 +581,7 @@ ALTER TABLE `joblevel`
 -- Indeksy dla tabeli `jobposition`
 --
 ALTER TABLE `jobposition`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Name` (`Name`);
 
 --
@@ -690,7 +696,7 @@ ALTER TABLE `worktype`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `categorywithpositions`
@@ -702,7 +708,7 @@ ALTER TABLE `categorywithpositions`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `education`
@@ -726,7 +732,7 @@ ALTER TABLE `joblevel`
 -- AUTO_INCREMENT for table `jobposition`
 --
 ALTER TABLE `jobposition`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `language`
@@ -738,7 +744,7 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -762,7 +768,7 @@ ALTER TABLE `typeofcontract`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `useraddress`

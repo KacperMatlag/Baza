@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2023 at 10:41 PM
+-- Generation Time: Feb 26, 2024 at 11:40 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -37,35 +37,35 @@ CREATE TABLE `announcement` (
   `WorkingTimeID` int(10) UNSIGNED NOT NULL,
   `WorkTypeID` int(10) UNSIGNED NOT NULL,
   `WorkCategoryID` int(10) UNSIGNED NOT NULL,
-  `ExpirationDate` date NOT NULL,
+  `ExpirationDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `MinWage` int(11) NOT NULL,
   `MaxWage` int(11) NOT NULL,
-  `Requirements` varchar(1000) NOT NULL,
-  `Responsibilities` varchar(1000) NOT NULL,
-  `WhatTheEmployerOffers` varchar(1000) NOT NULL,
   `CompanyID` int(10) UNSIGNED NOT NULL,
-  `CreatedAt` date NOT NULL DEFAULT current_timestamp()
+  `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `announcement`
 --
 
-INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobLevelID`, `TypeOfContractID`, `WorkingTimeID`, `WorkTypeID`, `WorkCategoryID`, `ExpirationDate`, `MinWage`, `MaxWage`, `Requirements`, `Responsibilities`, `WhatTheEmployerOffers`, `CompanyID`, `CreatedAt`) VALUES
-(2, 'Job Title 2', 'Description for Job 2', 2, 2, 2, 2, 2, 2, '2023-11-02', 60000, 90000, 'Requirements for Job 2', '', 'What the employer offers for Job 2', 2, '2023-10-29'),
-(3, 'Front-end Developer', 'Build user interfaces and create amazing user experiences.', 4, 2, 1, 2, 1, 2, '2023-11-25', 70000, 100000, 'Experience with React and JavaScript required.', '', 'Flexible work environment and training opportunities.', 1, '2023-10-29'),
-(4, 'HR Specialist', 'Join our HR team and contribute to employee success.', 1, 1, 2, 1, 2, 3, '2023-11-30', 60000, 90000, 'Experience in HR operations and recruitment preferred.', '', 'Competitive salary and comprehensive benefits.', 3, '2023-10-29'),
-(5, 'Graphic Designer', 'Create visually appealing designs for our brand.', 3, 2, 1, 1, 1, 1, '2023-12-05', 55000, 80000, 'Proficient in Adobe Creative Suite.', '', 'Artistic and collaborative work environment.', 2, '2023-10-29'),
-(6, 'Sales Representative', 'Drive sales and build relationships with clients.', 2, 1, 2, 2, 2, 2, '2023-12-10', 65000, 95000, 'Proven sales experience and excellent communication skills required.', '', 'Commission-based earnings and performance bonuses.', 1, '2023-10-29'),
-(7, 'Network Administrator', 'Manage and maintain our network infrastructure.', 4, 2, 1, 1, 1, 3, '2023-12-15', 75000, 110000, 'Certification in network administration and hands-on experience preferred.', '', 'Health insurance and retirement plans provided.', 3, '2023-10-29'),
-(8, 'Content Writer', 'Create engaging and informative content for our audience.', 3, 1, 2, 2, 1, 1, '2023-12-20', 50000, 75000, 'Excellent writing skills and knowledge of SEO best practices.', '', 'Flexible work hours and professional development opportunities.', 2, '2023-10-29'),
-(9, 'Financial Analyst', 'Analyze financial data and provide insights for decision-making.', 2, 2, 1, 1, 2, 2, '2023-12-25', 70000, 100000, 'Bachelor\'s degree in Finance or related field required.', '', 'Competitive salary and career advancement opportunities.', 1, '2023-10-29'),
-(10, 'Customer Support Specialist', 'Assist customers and provide exceptional support.', 1, 1, 2, 1, 2, 3, '2023-12-30', 55000, 80000, 'Strong interpersonal skills and patience required.', '', 'Health and wellness programs available.', 3, '2023-10-29'),
-(11, 'Product Manager', 'Lead the development and launch of new products.', 4, 2, 1, 2, 1, 2, '2024-01-05', 80000, 120000, 'Proven experience in product management and strategic planning.', '', 'Competitive salary and stock options.', 2, '2023-10-29'),
-(12, 'Quality Assurance Engineer', 'Ensure the quality of our software products.', 3, 1, 2, 1, 1, 1, '2024-01-10', 60000, 90000, 'Experience in software testing and knowledge of testing tools.', '', 'Professional development and growth opportunities.', 1, '2023-10-29'),
-(13, '123', '123', 1, 1, 1, 1, 1, 1, '2023-12-10', 1, 0, '3131', '', '311313', 1, '2023-11-11'),
-(14, 'Jakas super robota', 'Serio ci mowie', 2, 9, 2, 1, 1, 1, '2023-12-04', 123, 456, 'duze', '', 'zadne', 1, '2023-11-11'),
-(15, 'AAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAA', 1, 1, 1, 1, 1, 1, '2023-11-30', 1, 2, 'aAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAA', 1, '2023-11-29');
+INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobLevelID`, `TypeOfContractID`, `WorkingTimeID`, `WorkTypeID`, `WorkCategoryID`, `ExpirationDate`, `MinWage`, `MaxWage`, `CompanyID`, `CreatedAt`) VALUES
+(2, 'Job Title 2', 'Description for Job 2', 2, 2, 2, 2, 2, 2, '2024-12-11 23:00:00', 60000, 90000, 2, '2023-10-28 22:00:00'),
+(3, 'Front-end Developer', 'Build user interfaces and create amazing user experiences.', 4, 2, 1, 2, 1, 2, '2024-12-11 23:00:00', 70000, 100000, 1, '2023-10-28 22:00:00'),
+(4, 'HR Specialist', 'Join our HR team and contribute to employee success.', 1, 1, 2, 1, 2, 3, '2024-12-11 23:00:00', 60000, 90000, 3, '2023-10-28 22:00:00'),
+(5, 'Graphic Designer', 'Create visually appealing designs for our brand.', 3, 2, 1, 1, 1, 1, '2024-12-11 23:00:00', 55000, 80000, 2, '2023-10-28 22:00:00'),
+(6, 'Sales Representative', 'Drive sales and build relationships with clients.', 2, 1, 2, 2, 2, 2, '2024-12-11 23:00:00', 65000, 95000, 1, '2023-10-28 22:00:00'),
+(7, 'Network Administrator', 'Manage and maintain our network infrastructure.', 4, 2, 1, 1, 1, 3, '2024-12-11 23:00:00', 75000, 110000, 3, '2023-10-28 22:00:00'),
+(8, 'Content Writer', 'Create engaging and informative content for our audience.', 3, 1, 2, 2, 1, 1, '2024-12-11 23:00:00', 50000, 75000, 2, '2023-10-28 22:00:00'),
+(9, 'Financial Analyst', 'Analyze financial data and provide insights for decision-making.', 2, 2, 1, 1, 2, 2, '2024-12-11 23:00:00', 70000, 100000, 1, '2023-10-28 22:00:00'),
+(10, 'Customer Support Specialist', 'Assist customers and provide exceptional support.', 1, 1, 2, 1, 2, 3, '2024-12-11 23:00:00', 55000, 80000, 3, '2023-10-28 22:00:00'),
+(11, 'Product Manager', 'Lead the development and launch of new products.', 4, 2, 1, 2, 1, 2, '2024-12-11 23:00:00', 80000, 120000, 2, '2023-10-28 22:00:00'),
+(12, 'Quality Assurance Engineer', 'Ensure the quality of our software products.', 3, 1, 2, 1, 1, 1, '2024-12-11 23:00:00', 60000, 90000, 1, '2023-10-28 22:00:00'),
+(13, '123', '123', 1, 1, 1, 1, 1, 1, '2024-12-11 23:00:00', 1, 0, 1, '2023-11-10 23:00:00'),
+(14, 'Jakas super robota', 'Serio ci mowie', 2, 9, 2, 1, 1, 1, '2024-12-11 23:00:00', 123, 456, 1, '2023-11-10 23:00:00'),
+(52, 'Praca jakas', 'Jakis super opis', 12, 1, 1, 1, 2, 8, '2024-01-15 19:06:37', 3000, 6000, 1, '2024-01-29 17:57:18'),
+(53, 'Ogloszenie testowe', 'Ogloszenie testowe', 2, 2, 1, 2, 2, 1, '2024-01-21 00:00:00', 5000, 7000, 1, '2024-01-15 19:08:27'),
+(54, 'SuperSprawa', 'SuperSprawa SuperSprawa', 10, 6, 2, 1, 1, 6, '2024-02-18 00:00:00', 1, 2, 1, '2024-02-04 17:24:02'),
+(55, 'Super Tytul', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 12, 3, 3, 2, 1, 8, '2024-03-03 00:00:00', 1, 2, 1, '2024-02-21 19:00:08');
 
 -- --------------------------------------------------------
 
@@ -137,6 +137,32 @@ INSERT INTO `company` (`ID`, `Name`, `CompanyLocationID`, `Map`, `Description`, 
 (10, 'IndustryInnovators Ltd.', 12, '', 'Innowacyjne rozwiązania dla przemysłu.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
 (11, 'SalesForce Experts', 7, '', 'Zespołowi eksperci ds. sprzedaży i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
 (12, 'Firma', 0, '', '123', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `duties`
+--
+
+CREATE TABLE `duties` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Name` varchar(150) NOT NULL,
+  `AnnouncementID` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `duties`
+--
+
+INSERT INTO `duties` (`ID`, `Name`, `AnnouncementID`) VALUES
+(1, 'a', 8),
+(24, 'obowiazek 1', 52),
+(25, 'obowiazek 3', 52),
+(26, 'obowiazek 2', 52),
+(27, 'obowiazki 1', 53),
+(28, 'obowiazki 2', 53),
+(29, 'obowiazki 3', 53),
+(30, 'jakies cos', 54);
 
 -- --------------------------------------------------------
 
@@ -251,9 +277,27 @@ CREATE TABLE `language` (
 
 INSERT INTO `language` (`ID`, `Name`) VALUES
 (1, 'Angielski'),
-(2, 'Niemiecki'),
-(3, 'Hiszpanski'),
-(4, 'Portugalski');
+(2, 'Polski'),
+(3, 'Niemiecki'),
+(4, 'Francuski'),
+(5, 'Hiszpański'),
+(6, 'Włoski'),
+(7, 'Rosyjski'),
+(8, 'Chiński'),
+(9, 'Japoński'),
+(10, 'Arabski'),
+(11, 'Portugalski'),
+(12, 'Holenderski'),
+(13, 'Szwedzki'),
+(14, 'Norweski'),
+(15, 'Fiński'),
+(16, 'Duński'),
+(17, 'Turecki'),
+(18, 'Koreański'),
+(19, 'Grecki'),
+(20, 'Czeski'),
+(21, 'Węgierski'),
+(22, 'Słowacki');
 
 -- --------------------------------------------------------
 
@@ -281,11 +325,36 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNumber`, `ProfilePicture`, `AddressID`, `ProfessionalSummary`, `CurrentJobPositionID`, `CurrentJobPositionDescription`, `Skills`) VALUES
-(2, 'Adam', 'Kowalski', '2023-10-01', 'aa', '+48693202', 'aa', 1, 'aa', NULL, NULL, ''),
-(3, 'Adam', 'Kowalski', '2023-10-01', 'aa', '+4869320', 'aa', 1, 'aa', NULL, NULL, ''),
-(4, 'John', 'Doe', '1990-01-01', 'john.doe@example.com', '123456789', 'default.jpg', 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', NULL, NULL, ''),
-(45, 'Adam', 'Kowalski', NULL, 'adam@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, 'Kowalski', 'Adam', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(59, 'Marcina', 'Nowak', '2024-02-11', 'a@pl.pl', '12331', NULL, NULL, NULL, 12, 'Jezdze se i jest git', NULL),
+(60, 'IMIE MOJE', 'Nazwisko', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'Jasksa', 'sasasasaasaaa', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'KKKKKKKK', 'LLLLLLL', NULL, 'A@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 'KKKKKKKK', 'LLLLLLLL', NULL, 'PL@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `requirements`
+--
+
+CREATE TABLE `requirements` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Name` varchar(150) NOT NULL,
+  `AnnouncementID` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `requirements`
+--
+
+INSERT INTO `requirements` (`ID`, `Name`, `AnnouncementID`) VALUES
+(11, 'wymagania 1', 52),
+(12, 'wymagania 2', 52),
+(13, 'wymagania 3', 52),
+(14, 'Wymagania 1', 53),
+(15, 'Wymagania 2', 53),
+(16, 'Wymagania 3', 53),
+(17, 'super sprawa', 54);
 
 -- --------------------------------------------------------
 
@@ -295,17 +364,30 @@ INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNu
 
 CREATE TABLE `services` (
   `ID` int(10) UNSIGNED NOT NULL,
-  `Name` varchar(100) NOT NULL
+  `Name` varchar(100) NOT NULL,
+  `ImageUrl` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`ID`, `Name`) VALUES
-(1, 'GitHub'),
-(2, 'LinkedIn'),
-(3, 'Discord');
+INSERT INTO `services` (`ID`, `Name`, `ImageUrl`) VALUES
+(1, 'GitHub', 'https://cdn-icons-png.flaticon.com/512/25/25231.png'),
+(2, 'LinkedIn', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png'),
+(3, 'Discord', 'https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int(11) UNSIGNED NOT NULL,
+  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -353,7 +435,7 @@ INSERT INTO `typeofcontract` (`ID`, `Name`) VALUES
 CREATE TABLE `user` (
   `ID` int(10) UNSIGNED NOT NULL,
   `Login` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(1000) NOT NULL,
   `ProfileID` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -362,9 +444,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
-(2, 'Admin', 'Admin', 2),
-(3, 'user48', 'password59', 4),
-(55, 'JakisU', '$2b$10$wlMoHHn/Xb5WninjUj7f6.iqFhl7XyDX.Ybr0wGsXbT', 55);
+(59, 'Login', '$2a$10$7P6YlnqZR78fVr9.gQoJmuznsUBRMNyCg95xECZFtv7O9wguj.obm', 59),
+(60, 'JakisLogin', '$2a$10$MTizb71CMK.zIIbdxWTXFeFjGkBQ2pMGz51TnsUKDTjN8EzXQZdT.', 60),
+(61, 'JakiesImie', '$2a$10$G6fSdzipXAFmR29aB.P7YeS7AIjbiAYHx7Gctvll/sk9G5IMpdonC', 61),
+(63, 'Logina', '$2a$10$.zI6cht.a4jR9J0NywXoOuCok9MY.KX8qZytesiTkD5hwdUyGSGQO', 63);
 
 -- --------------------------------------------------------
 
@@ -421,7 +504,7 @@ CREATE TABLE `userexperience` (
 CREATE TABLE `userlanguages` (
   `ID` int(10) UNSIGNED NOT NULL,
   `LanguageID` int(50) UNSIGNED NOT NULL,
-  `Level` enum('A','B','C','') NOT NULL,
+  `Level` enum('A1','A2','B1','B2','C1','C2') NOT NULL,
   `ProfileID` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -438,6 +521,13 @@ CREATE TABLE `userlinks` (
   `Link` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `userlinks`
+--
+
+INSERT INTO `userlinks` (`ID`, `ProfileID`, `ServiceID`, `Link`) VALUES
+(3, 59, 1, 'https://github.com/Kacper');
+
 -- --------------------------------------------------------
 
 --
@@ -449,6 +539,31 @@ CREATE TABLE `usertraining` (
   `ProfileID` int(10) UNSIGNED NOT NULL,
   `TrainingID` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `whattheemployeroffers`
+--
+
+CREATE TABLE `whattheemployeroffers` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Name` varchar(150) NOT NULL,
+  `AnnouncementID` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `whattheemployeroffers`
+--
+
+INSERT INTO `whattheemployeroffers` (`ID`, `Name`, `AnnouncementID`) VALUES
+(5, 'Oferowane przez pracodawce 3', 52),
+(6, 'Oferowane przez pracodawce 2', 52),
+(7, 'Oferowane przez pracodawce 1', 52),
+(8, 'Oferowane przez pracodawce 1', 53),
+(9, 'Oferowane przez pracodawce 2', 53),
+(10, 'Oferowane przez pracodawce 3', 53),
+(11, 'niebywale', 54);
 
 -- --------------------------------------------------------
 
@@ -534,13 +649,13 @@ INSERT INTO `worktype` (`ID`, `Name`) VALUES
 --
 ALTER TABLE `announcement`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `CompanyID` (`CompanyID`),
-  ADD KEY `JobLevelID` (`JobLevelID`),
-  ADD KEY `JobPositionID` (`JobPositionID`),
-  ADD KEY `TypeOfContractID` (`TypeOfContractID`),
-  ADD KEY `WorkCategoryID` (`WorkCategoryID`),
-  ADD KEY `WorkingTimeID` (`WorkingTimeID`),
-  ADD KEY `WorkTypeID` (`WorkTypeID`);
+  ADD KEY `announcement_ibfk_1` (`CompanyID`),
+  ADD KEY `announcement_ibfk_2` (`JobLevelID`),
+  ADD KEY `announcement_ibfk_3` (`JobPositionID`),
+  ADD KEY `announcement_ibfk_4` (`TypeOfContractID`),
+  ADD KEY `announcement_ibfk_5` (`WorkCategoryID`),
+  ADD KEY `announcement_ibfk_6` (`WorkingTimeID`),
+  ADD KEY `announcement_ibfk_7` (`WorkTypeID`);
 
 --
 -- Indeksy dla tabeli `categorywithpositions`
@@ -556,6 +671,13 @@ ALTER TABLE `categorywithpositions`
 ALTER TABLE `company`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `CompanyLocationID` (`CompanyLocationID`);
+
+--
+-- Indeksy dla tabeli `duties`
+--
+ALTER TABLE `duties`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `AnnouncementID` (`AnnouncementID`);
 
 --
 -- Indeksy dla tabeli `education`
@@ -599,10 +721,23 @@ ALTER TABLE `profile`
   ADD KEY `CurrentJobPositionID` (`CurrentJobPositionID`);
 
 --
+-- Indeksy dla tabeli `requirements`
+--
+ALTER TABLE `requirements`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `requirements_ibfk_1` (`AnnouncementID`);
+
+--
 -- Indeksy dla tabeli `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indeksy dla tabeli `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
 
 --
 -- Indeksy dla tabeli `training`
@@ -650,8 +785,8 @@ ALTER TABLE `userexperience`
 --
 ALTER TABLE `userlanguages`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `LanguageID` (`LanguageID`),
-  ADD KEY `ProfileID` (`ProfileID`);
+  ADD KEY `ProfileID` (`ProfileID`),
+  ADD KEY `LanguageID` (`LanguageID`);
 
 --
 -- Indeksy dla tabeli `userlinks`
@@ -668,6 +803,13 @@ ALTER TABLE `usertraining`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ProfileID` (`ProfileID`),
   ADD KEY `TrainingID` (`TrainingID`);
+
+--
+-- Indeksy dla tabeli `whattheemployeroffers`
+--
+ALTER TABLE `whattheemployeroffers`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `whattheemployeroffers_ibfk_1` (`AnnouncementID`);
 
 --
 -- Indeksy dla tabeli `workcategory`
@@ -696,7 +838,7 @@ ALTER TABLE `worktype`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `categorywithpositions`
@@ -709,6 +851,12 @@ ALTER TABLE `categorywithpositions`
 --
 ALTER TABLE `company`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `duties`
+--
+ALTER TABLE `duties`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `education`
@@ -738,13 +886,19 @@ ALTER TABLE `jobposition`
 -- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `requirements`
+--
+ALTER TABLE `requirements`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -768,7 +922,7 @@ ALTER TABLE `typeofcontract`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `useraddress`
@@ -792,19 +946,25 @@ ALTER TABLE `userexperience`
 -- AUTO_INCREMENT for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `userlinks`
 --
 ALTER TABLE `userlinks`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `usertraining`
 --
 ALTER TABLE `usertraining`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `whattheemployeroffers`
+--
+ALTER TABLE `whattheemployeroffers`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `workcategory`
@@ -832,13 +992,13 @@ ALTER TABLE `worktype`
 -- Constraints for table `announcement`
 --
 ALTER TABLE `announcement`
-  ADD CONSTRAINT `announcement_ibfk_1` FOREIGN KEY (`CompanyID`) REFERENCES `company` (`ID`),
-  ADD CONSTRAINT `announcement_ibfk_2` FOREIGN KEY (`JobLevelID`) REFERENCES `joblevel` (`ID`),
-  ADD CONSTRAINT `announcement_ibfk_3` FOREIGN KEY (`JobPositionID`) REFERENCES `jobposition` (`id`),
-  ADD CONSTRAINT `announcement_ibfk_4` FOREIGN KEY (`TypeOfContractID`) REFERENCES `typeofcontract` (`ID`),
-  ADD CONSTRAINT `announcement_ibfk_5` FOREIGN KEY (`WorkCategoryID`) REFERENCES `workcategory` (`ID`),
-  ADD CONSTRAINT `announcement_ibfk_6` FOREIGN KEY (`WorkingTimeID`) REFERENCES `workingtime` (`ID`),
-  ADD CONSTRAINT `announcement_ibfk_7` FOREIGN KEY (`WorkTypeID`) REFERENCES `worktype` (`ID`);
+  ADD CONSTRAINT `announcement_ibfk_1` FOREIGN KEY (`CompanyID`) REFERENCES `company` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_2` FOREIGN KEY (`JobLevelID`) REFERENCES `joblevel` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_3` FOREIGN KEY (`JobPositionID`) REFERENCES `jobposition` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_4` FOREIGN KEY (`TypeOfContractID`) REFERENCES `typeofcontract` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_5` FOREIGN KEY (`WorkCategoryID`) REFERENCES `workcategory` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_6` FOREIGN KEY (`WorkingTimeID`) REFERENCES `workingtime` (`ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `announcement_ibfk_7` FOREIGN KEY (`WorkTypeID`) REFERENCES `worktype` (`ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `categorywithpositions`
@@ -846,6 +1006,12 @@ ALTER TABLE `announcement`
 ALTER TABLE `categorywithpositions`
   ADD CONSTRAINT `categorywithpositions_ibfk_1` FOREIGN KEY (`JobPositionID`) REFERENCES `jobposition` (`id`),
   ADD CONSTRAINT `categorywithpositions_ibfk_2` FOREIGN KEY (`WorkCategoryID`) REFERENCES `workcategory` (`ID`);
+
+--
+-- Constraints for table `duties`
+--
+ALTER TABLE `duties`
+  ADD CONSTRAINT `duties_ibfk_1` FOREIGN KEY (`AnnouncementID`) REFERENCES `announcement` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `experience`
@@ -860,6 +1026,12 @@ ALTER TABLE `experience`
 ALTER TABLE `profile`
   ADD CONSTRAINT `profile_ibfk_1` FOREIGN KEY (`AddressID`) REFERENCES `useraddress` (`ID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `profile_ibfk_2` FOREIGN KEY (`CurrentJobPositionID`) REFERENCES `jobposition` (`id`);
+
+--
+-- Constraints for table `requirements`
+--
+ALTER TABLE `requirements`
+  ADD CONSTRAINT `requirements_ibfk_1` FOREIGN KEY (`AnnouncementID`) REFERENCES `announcement` (`ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `user`
@@ -885,8 +1057,8 @@ ALTER TABLE `userexperience`
 -- Constraints for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
-  ADD CONSTRAINT `userlanguages_ibfk_1` FOREIGN KEY (`LanguageID`) REFERENCES `language` (`ID`),
-  ADD CONSTRAINT `userlanguages_ibfk_2` FOREIGN KEY (`ProfileID`) REFERENCES `profile` (`ID`);
+  ADD CONSTRAINT `userlanguages_ibfk_2` FOREIGN KEY (`ProfileID`) REFERENCES `profile` (`ID`),
+  ADD CONSTRAINT `userlanguages_ibfk_3` FOREIGN KEY (`LanguageID`) REFERENCES `language` (`ID`);
 
 --
 -- Constraints for table `userlinks`
@@ -901,6 +1073,12 @@ ALTER TABLE `userlinks`
 ALTER TABLE `usertraining`
   ADD CONSTRAINT `usertraining_ibfk_1` FOREIGN KEY (`ProfileID`) REFERENCES `profile` (`ID`),
   ADD CONSTRAINT `usertraining_ibfk_2` FOREIGN KEY (`TrainingID`) REFERENCES `training` (`ID`);
+
+--
+-- Constraints for table `whattheemployeroffers`
+--
+ALTER TABLE `whattheemployeroffers`
+  ADD CONSTRAINT `whattheemployeroffers_ibfk_1` FOREIGN KEY (`AnnouncementID`) REFERENCES `announcement` (`ID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

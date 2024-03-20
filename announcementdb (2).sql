@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2024 at 10:37 PM
+-- Generation Time: Mar 20, 2024 at 11:43 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -69,7 +69,9 @@ INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobL
 (56, 'Oferowane przez pracodawce', 'Oferowane przez pracodawceOferowane przez pracodawce', 15, 1, 1, 1, 1, 11, '2024-03-03 00:00:00', 1, 2, 1, '2024-03-01 14:34:00'),
 (57, 'Oferowane przez pracodawce', 'Oferowane przez pracodawceOferowane przez pracodawce', 15, 1, 1, 1, 1, 11, '2024-03-03 00:00:00', 1, 2, 1, '2024-03-01 14:36:26'),
 (58, 'Ogloszenie testowe', 'Ogloszenie testowe', 15, 3, 2, 2, 2, 11, '2024-03-31 00:00:00', 1, 2, 1, '2024-03-02 16:50:08'),
-(59, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 18, 4, 3, 2, 3, 14, '2024-03-10 00:00:00', 1, 2, 1, '2024-03-05 19:10:13');
+(59, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 18, 4, 3, 2, 3, 14, '2024-03-10 00:00:00', 1, 2, 1, '2024-03-05 19:10:13'),
+(60, 'SuperZadyma', 'SuperZadyma', 15, 1, 1, 1, 2, 11, '2024-03-03 00:00:00', 1, 2, 1, '2024-03-13 11:37:42'),
+(61, 'Jakies masne ogloszenie', 'Jakies masne ogloszenie', 12, 1, 6, 1, 2, 8, '2024-03-24 00:00:00', 1, 2, 1, '2024-03-16 17:26:03');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,6 @@ INSERT INTO `categorywithpositions` (`ID`, `JobPositionID`, `WorkCategoryID`) VA
 CREATE TABLE `company` (
   `ID` int(10) UNSIGNED NOT NULL,
   `Name` varchar(100) NOT NULL,
-  `CompanyLocationID` int(10) UNSIGNED NOT NULL,
   `AddressID` int(10) UNSIGNED NOT NULL,
   `Description` varchar(500) DEFAULT NULL,
   `Image` varchar(500) DEFAULT NULL
@@ -128,19 +129,30 @@ CREATE TABLE `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`ID`, `Name`, `CompanyLocationID`, `AddressID`, `Description`, `Image`) VALUES
-(1, 'Lenovo Polska', 2, 1, NULL, 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(2, 'TechSolutions Co.', 6, 1, 'Tworzymy innowacyjne rozwiązania technologiczne.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(3, 'Hospitality Experts', 2, 1, 'Specjaliści w dziedzinie hotelarstwa i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(4, 'GreenAgro Farms', 15, 1, 'Zajmujemy się produkcją ekologicznych artykułów rolnych.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(5, 'MediaMasters Agency', 10, 1, 'Agencja reklamowa zajmująca się mediami i marketingiem.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(6, 'TransportEase Logistics', 8, 1, 'Zapewniamy kompleksowe usługi logistyczne.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(7, 'ArtisticExpressions Studio', 9, 1, 'Studio artystyczne specjalizujące się w tworzeniu dzieł sztuki.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(8, 'EducationHub Institute', 3, 1, 'Instytut edukacyjny oferujący różnorodne kursy i szkolenia.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(9, 'TelecomConnect Solutions', 18, 1, 'Specjaliści w dziedzinie telekomunikacji i sieci.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(10, 'IndustryInnovators Ltd.', 12, 1, 'Innowacyjne rozwiązania dla przemysłu.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(11, 'SalesForce Experts', 7, 1, 'Zespołowi eksperci ds. sprzedaży i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
-(12, 'Firma', 0, 1, '123', '123');
+INSERT INTO `company` (`ID`, `Name`, `AddressID`, `Description`, `Image`) VALUES
+(1, 'Lenovo Polska', 6, NULL, 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(2, 'TechSolutions Co.', 6, 'Tworzymy innowacyjne rozwiązania technologiczne.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(3, 'Hospitality Experts', 6, 'Specjaliści w dziedzinie hotelarstwa i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(4, 'GreenAgro Farms', 6, 'Zajmujemy się produkcją ekologicznych artykułów rolnych.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(5, 'MediaMasters Agency', 6, 'Agencja reklamowa zajmująca się mediami i marketingiem.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(6, 'TransportEase Logistics', 6, 'Zapewniamy kompleksowe usługi logistyczne.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(7, 'ArtisticExpressions Studio', 6, 'Studio artystyczne specjalizujące się w tworzeniu dzieł sztuki.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(8, 'EducationHub Institute', 6, 'Instytut edukacyjny oferujący różnorodne kursy i szkolenia.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(9, 'TelecomConnect Solutions', 6, 'Specjaliści w dziedzinie telekomunikacji i sieci.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(10, 'IndustryInnovators Ltd.', 6, 'Innowacyjne rozwiązania dla przemysłu.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(11, 'SalesForce Experts', 6, 'Zespołowi eksperci ds. sprzedaży i obsługi klienta.', 'https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png'),
+(12, 'Firma', 6, '123', '123'),
+(13, 'SuperSprawa', 12, 'SuperAkcja', NULL),
+(14, 'LAskowa', 13, 'Firma', NULL),
+(15, 'Cos', 1, 'Ktos', NULL),
+(16, 'SuperSpaera', 15, 'SuperSpaera', NULL),
+(17, '', 2, '', NULL),
+(18, 'ZZZ', 16, 'AAA', NULL),
+(19, 'Super Dluga nazwa firmy do sprawdzenia czy to jakos wyglada chociaz nwm', 17, 'z', 'http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif'),
+(20, '', 2, '', 'http://localhost:2137/uploads/823fc743-c656-42e2-bff6-f0ffacf17b8d.gif'),
+(21, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL),
+(22, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL),
+(23, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +179,10 @@ INSERT INTO `duties` (`ID`, `Name`, `AnnouncementID`) VALUES
 (28, 'obowiazki 2', 53),
 (29, 'obowiazki 3', 53),
 (30, 'jakies cos', 54),
-(31, '1234', 59);
+(31, '1234', 59),
+(32, '1234', 60),
+(33, '12344', 60),
+(34, 'obowiazek', 61);
 
 -- --------------------------------------------------------
 
@@ -322,27 +337,31 @@ CREATE TABLE `profile` (
   `ProfessionalSummary` varchar(1000) DEFAULT NULL,
   `CurrentJobPositionID` int(11) UNSIGNED DEFAULT NULL,
   `CurrentJobPositionDescription` varchar(500) DEFAULT NULL,
-  `Skills` varchar(1000) DEFAULT NULL
+  `Skills` varchar(1000) DEFAULT NULL,
+  `ProfilePictureURL` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `profile`
 --
 
-INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNumber`, `ProfilePicture`, `AddressID`, `ProfessionalSummary`, `CurrentJobPositionID`, `CurrentJobPositionDescription`, `Skills`) VALUES
-(59, 'Zamir', 'Nowaka', '2024-02-11', 'a@pl.pl', '123456789', NULL, NULL, NULL, 10, ' ༼ つ ◕_◕ ༽つ', NULL),
-(60, 'IMIE MOJE', 'Nazwisko', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(61, 'Jasksa', 'sasasasaasaaa', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(62, 'KKKKKKKK', 'LLLLLLL', NULL, 'A@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(63, 'KKKKKKKK', 'LLLLLLLL', NULL, 'PL@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(65, 'Kacper', 'Jakis', NULL, '123456@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(66, 'Super', 'Sprawa', NULL, 'ss@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(67, 'JAKISREGISTER', 'JAKISREGISTER', NULL, 'JAKISREGISTER@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(68, 'JAKISREGISTER', 'JAKISREGISTER', NULL, 'JAKISREGISTER@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(69, 'SuperLogin', 'SuperLogin', NULL, 'SuperLogin@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(70, 'localhost', 'localhost', NULL, 'localhost@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(71, 'JakiesCos', 'JakiesCos', NULL, 'JakiesCos@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(72, 'AAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAA', NULL, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNumber`, `ProfilePicture`, `AddressID`, `ProfessionalSummary`, `CurrentJobPositionID`, `CurrentJobPositionDescription`, `Skills`, `ProfilePictureURL`) VALUES
+(59, 'Michał', 'Potrzebny', '2024-02-11', 'a@pl.pl', '123456789', NULL, 6, NULL, 15, ' ༼ つ ◕_◕ ༽つ', NULL, 'http://localhost:2137/uploads/84ec269f-0960-4d0f-bc73-8a703c1ebf86.gif'),
+(60, 'IMIE MOJE', 'Nazwisko', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'Jasksa', 'sasasasaasaaa', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'KKKKKKKK', 'LLLLLLL', NULL, 'A@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 'KKKKKKKK', 'LLLLLLLL', NULL, 'PL@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(65, 'Kacper', 'Jakis', NULL, '123456@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(66, 'Super', 'Sprawa', NULL, 'ss@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(67, 'JAKISREGISTER', 'JAKISREGISTER', NULL, 'JAKISREGISTER@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(68, 'JAKISREGISTER', 'JAKISREGISTER', NULL, 'JAKISREGISTER@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(69, 'SuperLogin', 'SuperLogin', NULL, 'SuperLogin@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(70, 'localhost', 'localhost', NULL, 'localhost@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(71, 'JakiesCos', 'JakiesCos', NULL, 'JakiesCos@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(72, 'AAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAA', NULL, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(73, 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', NULL, 'AAAAAAAAAAAAAAAAAAAAAAAAAA@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(74, 'ZZZZZZZZZZZ', 'ZZZZZZZZZZZ', NULL, 'ZZZZZZZZZZZ@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(75, 'testowe', 'testowe', NULL, 'testowe@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -367,7 +386,8 @@ INSERT INTO `requirements` (`ID`, `Name`, `AnnouncementID`) VALUES
 (14, 'Wymagania 1', 53),
 (15, 'Wymagania 2', 53),
 (16, 'Wymagania 3', 53),
-(17, 'super sprawa', 54);
+(17, 'super sprawa', 54),
+(18, 'wymog', 61);
 
 -- --------------------------------------------------------
 
@@ -402,13 +422,6 @@ CREATE TABLE `sessions` (
   `expires` int(11) UNSIGNED NOT NULL,
   `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('RyVYMIbvSKvIibFjIS8jvNsKYcVLdXau', 1709657420, '{\"cookie\":{\"originalMaxAge\":1800000,\"expires\":\"2024-03-05T16:49:12.413Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"ID\":59,\"Login\":\"Login\",\"ProfileID\":59,\"Profile\":{\"ID\":59,\"Name\":\"Zamir\",\"Surname\":\"Nowaka\",\"DateOfBirth\":\"2024-02-11\",\"Email\":\"a@pl.pl\",\"PhoneNumber\":\"123456789\",\"ProfilePicture\":null,\"AddressID\":null,\"ProfessionalSummary\":null,\"CurrentJobPositionID\":10,\"CurrentJobPositionDescription\":\" ༼ つ ◕_◕ ༽つ\",\"Skills\":null,\"JobPosition\":{\"ID\":10,\"Name\":\"Pielęgniarka/Pielegniarz\"},\"Services\":[{\"ID\":15,\"ProfileID\":59,\"ServiceID\":1,\"Link\":\"https://github.com/KacperMatlag\",\"Service\":{\"ID\":1,\"Name\":\"GitHub\",\"UrlPrefix\":\"https://github.com/\",\"ImageUrl\":\"https://cdn-icons-png.flaticon.com/512/25/25231.png\"}}],\"Languages\":[{\"ID\":38,\"LanguageID\":22,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":22,\"Name\":\"Słowacki\"}},{\"ID\":39,\"LanguageID\":8,\"Level\":\"A2\",\"ProfileID\":59,\"Language\":{\"ID\":8,\"Name\":\"Chiński\"}},{\"ID\":40,\"LanguageID\":16,\"Level\":\"C2\",\"ProfileID\":59,\"Language\":{\"ID\":16,\"Name\":\"Duński\"}},{\"ID\":41,\"LanguageID\":1,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":1,\"Name\":\"Angielski\"}},{\"ID\":42,\"LanguageID\":10,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":10,\"Name\":\"Arabski\"}}]}}}');
 
 -- --------------------------------------------------------
 
@@ -465,13 +478,16 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
-(59, 'Login', '$2a$10$udXobxuiwThqbuoXZuRUYOybLEsdQSzYfCJ.ZqBl76txEE162jrfC', 59),
+(59, 'Login', '$2a$10$U8t.NBd0U5oWmQCwb9VNZ..RP.Q2./pZvzBscS9ubeuZP4Vk/2KpO', 59),
 (60, 'JakisLogin', '$2a$10$MTizb71CMK.zIIbdxWTXFeFjGkBQ2pMGz51TnsUKDTjN8EzXQZdT.', 60),
 (61, 'JakiesImie', '$2a$10$G6fSdzipXAFmR29aB.P7YeS7AIjbiAYHx7Gctvll/sk9G5IMpdonC', 61),
 (70, 'JAKISREGISTER', '$2a$10$2qY/TgQGOVrlP6zxfyaiCeTc8/AGSVOpEmcB8AmvV1YUnCv006KxG', 68),
 (71, 'SuperLogin', '$2a$10$aPWaLRu9542pMjq90MOvaeyD5n60Tw3iX55ropDBmUjA198SK3is6', 69),
 (72, 'localhost', '$2a$10$1adLuuXyjr3Gf8Bwcz0HKehRlXACnDJ6MAf86Wy0KmX3WxqSBuCE6', 70),
-(73, 'JakiesCos', '$2a$10$c14g/6BwUgpGT.4M8AA7o.KhJKHQ176RLrxOXQTw7MvDigtc6cmKS', 71);
+(73, 'JakiesCos', '$2a$10$c14g/6BwUgpGT.4M8AA7o.KhJKHQ176RLrxOXQTw7MvDigtc6cmKS', 71),
+(74, 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 73),
+(75, 'ZZZZZZZZZZZ', '$2a$10$.pLJQOcNqS48NT0x6EXGh.Rzt3p6SwHwrvC1xQQVawsuR08u.8m0e', 74),
+(76, 'testowe', '$2a$10$pYOi3eZ..EsQtKAIj6vABeVkmrK/M.S2u1wMGUSV.lVXauyQ8yIqq', 75);
 
 -- --------------------------------------------------------
 
@@ -482,8 +498,8 @@ INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
 CREATE TABLE `useraddress` (
   `ID` int(11) UNSIGNED NOT NULL,
   `Address` varchar(500) NOT NULL,
-  `Longitude` float NOT NULL,
-  `Latitude` float NOT NULL
+  `Longitude` int(11) NOT NULL,
+  `Latitude` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -491,8 +507,20 @@ CREATE TABLE `useraddress` (
 --
 
 INSERT INTO `useraddress` (`ID`, `Address`, `Longitude`, `Latitude`) VALUES
-(1, 'Józefa Piłsudskiego 25, 34-600 Limanowa, Poland', 49.7056, 20.4212),
-(2, '', 0, 0);
+(1, 'Józefa Piłsudskiego 25, 34-600 Limanowa, Poland', 50, 20),
+(2, '', 0, 0),
+(6, 'Józefa Marka 69, 34-600 Limanowa, Poland', 50, 20),
+(7, 'Krakowska 23, 34-600 Limanowa, Poland', 50, 20),
+(8, 'Lipowa 26, 34-600 Limanowa, Poland', 50, 20),
+(9, 'Krakowska 27, 34-600 Limanowa, Poland', 50, 20),
+(10, '28, 34-600 Limanowa, Poland', 50, 20),
+(11, 'Krakowska 29, 34-600 Limanowa, Poland', 50, 20),
+(12, 'Józefa Piłsudskiego 30, 34-600 Limanowa, Poland', 50, 20),
+(13, 'Laskowa 75, 34-602 Laskowa, Poland', 50, 20),
+(14, 'Engenho Barbalho Ll 32, 124, Charneca, Cabo de Santo Agostinho - Pernambuco, 54500-000, Brazil', -8, -35),
+(15, 'Laskowa 69, 34-602 Laskowa, Poland', 50, 20),
+(16, 'Jalan Sungai Burung AA 32/AA, 40460 Kelang, Selangor, Malaysia', 3, 102),
+(17, 'Jl. Perkebunan Blok Z No. 10, Kecamatan Percut Sei Tuan, Deli Serdang Regency, Sumatera Utara 20371, Indonesia', 4, 99);
 
 -- --------------------------------------------------------
 
@@ -577,6 +605,27 @@ CREATE TABLE `usertraining` (
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `userwithcompanies`
+--
+
+CREATE TABLE `userwithcompanies` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `ProfileID` int(10) UNSIGNED NOT NULL,
+  `CompanyID` int(10) UNSIGNED NOT NULL,
+  `HierarchyID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `userwithcompanies`
+--
+
+INSERT INTO `userwithcompanies` (`ID`, `ProfileID`, `CompanyID`, `HierarchyID`) VALUES
+(1, 59, 19, NULL),
+(2, 59, 23, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `whattheemployeroffers`
 --
 
@@ -597,7 +646,8 @@ INSERT INTO `whattheemployeroffers` (`ID`, `Name`, `AnnouncementID`) VALUES
 (8, 'Oferowane przez pracodawce 1', 53),
 (9, 'Oferowane przez pracodawce 2', 53),
 (10, 'Oferowane przez pracodawce 3', 53),
-(11, 'niebywale', 54);
+(11, 'niebywale', 54),
+(12, 'Oferowane przez pracodawce', 61);
 
 -- --------------------------------------------------------
 
@@ -704,7 +754,6 @@ ALTER TABLE `categorywithpositions`
 --
 ALTER TABLE `company`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `CompanyLocationID` (`CompanyLocationID`),
   ADD KEY `AddressID` (`AddressID`);
 
 --
@@ -840,6 +889,14 @@ ALTER TABLE `usertraining`
   ADD KEY `TrainingID` (`TrainingID`);
 
 --
+-- Indeksy dla tabeli `userwithcompanies`
+--
+ALTER TABLE `userwithcompanies`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `CompanyID` (`CompanyID`),
+  ADD KEY `ProfileID` (`ProfileID`);
+
+--
 -- Indeksy dla tabeli `whattheemployeroffers`
 --
 ALTER TABLE `whattheemployeroffers`
@@ -873,7 +930,7 @@ ALTER TABLE `worktype`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `categorywithpositions`
@@ -885,13 +942,13 @@ ALTER TABLE `categorywithpositions`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `duties`
 --
 ALTER TABLE `duties`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `education`
@@ -927,13 +984,13 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `requirements`
 --
 ALTER TABLE `requirements`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -957,13 +1014,13 @@ ALTER TABLE `typeofcontract`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `useraddress`
 --
 ALTER TABLE `useraddress`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `usereducation`
@@ -996,10 +1053,16 @@ ALTER TABLE `usertraining`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `userwithcompanies`
+--
+ALTER TABLE `userwithcompanies`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `whattheemployeroffers`
 --
 ALTER TABLE `whattheemployeroffers`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `workcategory`
@@ -1114,6 +1177,13 @@ ALTER TABLE `userlinks`
 ALTER TABLE `usertraining`
   ADD CONSTRAINT `usertraining_ibfk_1` FOREIGN KEY (`ProfileID`) REFERENCES `profile` (`ID`),
   ADD CONSTRAINT `usertraining_ibfk_2` FOREIGN KEY (`TrainingID`) REFERENCES `training` (`ID`);
+
+--
+-- Constraints for table `userwithcompanies`
+--
+ALTER TABLE `userwithcompanies`
+  ADD CONSTRAINT `userwithcompanies_ibfk_1` FOREIGN KEY (`CompanyID`) REFERENCES `company` (`ID`),
+  ADD CONSTRAINT `userwithcompanies_ibfk_2` FOREIGN KEY (`ProfileID`) REFERENCES `profile` (`ID`);
 
 --
 -- Constraints for table `whattheemployeroffers`

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Maj 13, 2024 at 11:12 PM
+-- Generation Time: Cze 03, 2024 at 10:33 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -71,7 +71,11 @@ INSERT INTO `announcement` (`ID`, `Title`, `Description`, `JobPositionID`, `JobL
 (59, 'superzmianajakastego', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 15, 4, 3, 2, 3, 11, '2024-04-23 21:41:55', 1, 2, 1, '2024-03-05 19:10:13'),
 (60, 'SuperZadyma', 'SuperZadyma', 15, 1, 1, 1, 2, 11, '2024-03-03 00:00:00', 1, 2, 1, '2024-03-13 11:37:42'),
 (61, 'Jakies masne ogloszenie', 'Jakies masne ogloszenie', 12, 1, 6, 1, 2, 8, '2024-03-24 00:00:00', 1, 2, 1, '2024-03-16 17:26:03'),
-(62, 'SuperNoweOgloszenie', 'SuperNoweOgloszenie', 15, 2, 1, 1, 1, 11, '2024-03-25 21:09:26', 1, 1, 19, '2024-03-25 21:08:31');
+(62, 'SuperNoweOgloszenie', 'SuperNoweOgloszenie', 15, 2, 1, 1, 1, 11, '2024-03-25 21:09:26', 1, 1, 19, '2024-03-25 21:08:31'),
+(78, 'Lubie to', 'Cos ciekawego', 8, 2, 3, 3, 2, 4, '2024-06-09 00:00:00', 123, 456, 27, '2024-06-03 16:26:53'),
+(87, 'HamburgerHamburgerHamburger', 'HamburgerHamburgerHamburger', 12, 2, 3, 1, 2, 8, '2024-06-03 20:07:25', 123, 456, 19, '2024-06-03 20:04:26'),
+(88, 'SuperSprawaStarySuperSprawaStary', 'SuperSprawaStarySuperSprawaStary', 7, 2, 1, 1, 2, 3, '2024-06-16 00:00:00', 1, 1, 36, '2024-06-03 20:17:02'),
+(89, 'SuperSprawaStarySuperSprawaStarySuperSprawaStarySuperSprawaStary', 'SuperSprawaStarySuperSprawaStarySuperSprawaStarySuperSprawaStary', 15, 1, 2, 2, 1, 11, '2024-06-20 00:00:00', 1, 2, 36, '2024-06-03 20:28:28');
 
 -- --------------------------------------------------------
 
@@ -92,7 +96,7 @@ CREATE TABLE `application` (
 --
 
 INSERT INTO `application` (`ID`, `AnnouncementID`, `ProfileID`, `createdAt`, `updatedAt`) VALUES
-(15, 11, 59, '2024-05-12 10:15:59', '2024-05-12 10:15:59');
+(18, 14, 59, '2024-06-03 18:03:57', '2024-06-03 18:03:57');
 
 -- --------------------------------------------------------
 
@@ -169,10 +173,16 @@ INSERT INTO `company` (`ID`, `Name`, `AddressID`, `Description`, `Image`) VALUES
 (16, 'SuperSpaera', 15, 'SuperSpaera', NULL),
 (17, '', 2, '', NULL),
 (18, 'ZZZ', 16, 'AAA', NULL),
-(19, 'Super Dluga nazwa firmy do sprawdzenia czy to jakos wyglada chociaz nwm', 17, 'z', 'http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif'),
+(19, 'xxx', 17, 'z', 'http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif'),
 (20, '', 2, '', 'http://localhost:2137/uploads/823fc743-c656-42e2-bff6-f0ffacf17b8d.gif'),
 (21, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL),
-(22, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL);
+(22, 'Limanowska firma niczego', 2, 'Limanowska firma niczego', NULL),
+(24, 'FirmaMoja', 20, 'MojaFirma', NULL),
+(25, 'Moja nuwafirma', 21, 'Super firma', 'http://localhost:2137/uploads/4202a2b5-ba63-4a1d-8193-11e7ad8a6dc7.gif'),
+(27, 'Spoko firma123', 23, 'zzzz', 'http://localhost:2137/uploads/6059207e-08c9-4fc5-8950-55a581660b4d.gif'),
+(30, 'hjfdhjifsdka', 24, 'hjfdhjifsdk', 'http://localhost:2137/uploads/c12dabdb-e8d8-4a75-ae22-c5583600865b.gif'),
+(35, 'SuperSprawaStary', 29, 'SuperSprawaStary', NULL),
+(36, 'CCCCCCCCCCCCCCCCCCC', 20, 'ZZZZZZZZZZZZZZZZ', 'http://localhost:2137/uploads/9f41c46c-4ea2-46ad-a4d3-455884770386.gif');
 
 -- --------------------------------------------------------
 
@@ -252,7 +262,32 @@ CREATE TABLE `education` (
 INSERT INTO `education` (`ID`, `SchoolName`, `City`, `SchoolType`, `FieldOfStudy`, `StartDate`, `EndDate`, `Still`, `ProfileID`) VALUES
 (26, 'ZSTIO Limanowa', 'Limanowa', 3, 'Technik Programista', 2019, 2025, 0, 59),
 (28, 'WSEI', 'Kraków', 5, 'Informatyka', 2026, NULL, 0, 59),
-(29, 'Szkoła podstawowa', 'Młynne', 1, NULL, 2012, 2019, 0, 59);
+(29, 'Szkoła podstawowa', 'Młynne', 1, NULL, 2012, 2019, 0, 59),
+(30, 'Jakas Szkola', 'cos', 2, 'Kierunek', 1999, 2010, 0, 78),
+(31, 'Szkola2', 'Miasto2', 3, 'Kierunek2', 20011, 2022, 0, 78),
+(32, 'ZSTIO', 'Limanowa', 3, 'Jakis', 2005, 2009, 0, 79);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `employment`
+--
+
+CREATE TABLE `employment` (
+  `ID` int(11) NOT NULL,
+  `Company` varchar(100) NOT NULL,
+  `Position` varchar(100) NOT NULL,
+  `StartDate` datetime NOT NULL,
+  `EndDate` datetime NOT NULL,
+  `ProfileID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `employment`
+--
+
+INSERT INTO `employment` (`ID`, `Company`, `Position`, `StartDate`, `EndDate`, `ProfileID`) VALUES
+(13, 'Firma1', 'Pozycja1', '2024-06-30 00:00:00', '2024-07-01 00:00:00', 59);
 
 -- --------------------------------------------------------
 
@@ -399,7 +434,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNumber`, `ProfilePicture`, `AddressID`, `ProfessionalSummary`, `CurrentJobPositionID`, `CurrentJobPositionDescription`, `Skills`, `ProfilePictureURL`) VALUES
-(59, 'Michał', 'Potrzebny', '2024-02-11', 'a@pl.pl', '123456789', NULL, 19, NULL, 11, ' ༼ つ ◕_◕ ༽つ', NULL, 'http://localhost:2137/uploads/b0d72904-f19f-4946-b40f-7dc3183626dd.gif'),
+(59, 'Michał2', 'Zbedny', '2024-02-18', 'a@pl.pl', '123456789', NULL, 19, NULL, 10, 'aaaaa', NULL, 'http://localhost:2137/uploads/185254a6-db15-42e6-a0b1-f9144aa98295.gif'),
 (60, 'IMIE MOJE', 'Nazwisko', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (61, 'Jasksa', 'sasasasaasaaa', NULL, 'a@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (62, 'KKKKKKKK', 'LLLLLLL', NULL, 'A@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -415,7 +450,10 @@ INSERT INTO `profile` (`ID`, `Name`, `Surname`, `DateOfBirth`, `Email`, `PhoneNu
 (73, 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', NULL, 'AAAAAAAAAAAAAAAAAAAAAAAAAA@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (74, 'ZZZZZZZZZZZ', 'ZZZZZZZZZZZ', NULL, 'ZZZZZZZZZZZ@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (75, 'testowe', 'testowe', NULL, 'testowe@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(76, 'Michał', 'Michał', NULL, 'michal@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(76, 'Michał', 'Michał', NULL, 'michal@pl.pl', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(77, 'Marcin', 'Nazwisko', '2024-05-05', 'Imie@pl.pl', '123456789', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(78, 'Marcinek', 'Nowak', '2024-05-05', 'Nowak@pl.pl', '321321321', NULL, 22, NULL, 15, 'OPIS JAKIS', NULL, 'http://localhost:2137/uploads/8ac29b37-4db5-4224-8994-5656fa496fc6.gif'),
+(79, 'Adam', 'Jakis', '2024-06-02', 'adam@pl.pl', '123456789', NULL, 25, NULL, 7, 'Super Nauczyciel', NULL, 'http://localhost:2137/uploads/a6f6d3ce-c12e-4b75-a52c-bf80db771171.gif');
 
 -- --------------------------------------------------------
 
@@ -504,9 +542,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('1MH1iPivazzjNzqhqRLyddmvQzViTnim', 1715510620, '{\"cookie\":{\"originalMaxAge\":1800000,\"expires\":\"2024-05-12T10:14:20.869Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"ID\":59,\"Login\":\"Login\",\"ProfileID\":59,\"Profile\":{\"ID\":59,\"Name\":\"Michał\",\"Surname\":\"Potrzebny\",\"DateOfBirth\":\"2024-02-11\",\"Email\":\"a@pl.pl\",\"PhoneNumber\":\"123456789\",\"ProfilePicture\":null,\"AddressID\":19,\"ProfessionalSummary\":null,\"CurrentJobPositionID\":11,\"CurrentJobPositionDescription\":\" ༼ つ ◕_◕ ༽つ\",\"Skills\":null,\"ProfilePictureURL\":\"http://localhost:2137/uploads/b0d72904-f19f-4946-b40f-7dc3183626dd.gif\",\"Companies\":[{\"ID\":1,\"ProfileID\":59,\"CompanyID\":19,\"HierarchyID\":null,\"Company\":{\"ID\":19,\"Name\":\"Super Dluga nazwa firmy do sprawdzenia czy to jakos wyglada chociaz nwm\",\"Description\":\"z\",\"Image\":\"http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif\",\"AddressID\":17,\"Address\":{\"ID\":17,\"Address\":\"Jl. Perkebunan Blok Z No. 10, Kecamatan Percut Sei Tuan, Deli Serdang Regency, Sumatera Utara 20371, Indonesia\",\"Longitude\":4,\"Latitude\":99}}}],\"JobPosition\":{\"ID\":11,\"Name\":\"Przedstawiciel Handlowy\"},\"Services\":[{\"ID\":15,\"ProfileID\":59,\"ServiceID\":1,\"Link\":\"https://github.com/KacperMatlag\",\"Service\":{\"ID\":1,\"Name\":\"GitHub\",\"UrlPrefix\":\"https://github.com/\",\"ImageUrl\":\"https://cdn-icons-png.flaticon.com/512/25/25231.png\"}},{\"ID\":17,\"ProfileID\":59,\"ServiceID\":2,\"Link\":\"https://www.linkedin.com/\",\"Service\":{\"ID\":2,\"Name\":\"LinkedIn\",\"UrlPrefix\":\"https://www.linkedin.com/\",\"ImageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png\"}}],\"Address\":{\"ID\":19,\"Address\":\"Podegrodzie 3, 33-386 Gmina Podegrodzie, Poland\",\"Longitude\":50,\"Latitude\":21},\"Languages\":[{\"ID\":38,\"LanguageID\":22,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":22,\"Name\":\"Słowacki\"}},{\"ID\":39,\"LanguageID\":8,\"Level\":\"A2\",\"ProfileID\":59,\"Language\":{\"ID\":8,\"Name\":\"Chiński\"}},{\"ID\":40,\"LanguageID\":16,\"Level\":\"C2\",\"ProfileID\":59,\"Language\":{\"ID\":16,\"Name\":\"Duński\"}},{\"ID\":41,\"LanguageID\":1,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":1,\"Name\":\"Angielski\"}},{\"ID\":42,\"LanguageID\":10,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":10,\"Name\":\"Arabski\"}},{\"ID\":43,\"LanguageID\":17,\"Level\":\"B1\",\"ProfileID\":59,\"Language\":{\"ID\":17,\"Name\":\"Turecki\"}}],\"Education\":[{\"ID\":26,\"SchoolName\":\"ZSTIO Limanowa\",\"City\":\"Limanowa\",\"FieldOfStudy\":\"Technik Programista\",\"StartDate\":2019,\"EndDate\":2025,\"ProfileID\":59,\"SchoolType\":3,\"schoolType\":{\"ID\":3,\"Name\":\"Technikum\"}},{\"ID\":28,\"SchoolName\":\"WSEI\",\"City\":\"Kraków\",\"FieldOfStudy\":\"Informatyka\",\"StartDate\":2026,\"EndDate\":null,\"ProfileID\":59,\"SchoolType\":5,\"schoolType\":{\"ID\":5,\"Name\":\"Uczelnia wyższa\"}},{\"ID\":29,\"SchoolName\":\"Szkoła podstawowa\",\"City\":\"Młynne\",\"FieldOfStudy\":null,\"StartDate\":2012,\"EndDate\":2019,\"ProfileID\":59,\"SchoolType\":1,\"schoolType\":{\"ID\":1,\"Name\":\"Szkoła podstawowa\"}}],\"Course\":[{\"ID\":1,\"Name\":\"Kurs c++\",\"Organizer\":\"Super organizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59},{\"ID\":2,\"Name\":\"Super Kurs\",\"Organizer\":\"Super Ogranizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59}]}}}'),
-('_DOf8VHPUPjIzfqVIr2GuTL7r5P7XjxY', 1715510762, '{\"cookie\":{\"originalMaxAge\":1800000,\"expires\":\"2024-05-12T10:44:41.412Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"ID\":59,\"Login\":\"Login\",\"ProfileID\":59,\"Profile\":{\"ID\":59,\"Name\":\"Michał\",\"Surname\":\"Potrzebny\",\"DateOfBirth\":\"2024-02-11\",\"Email\":\"a@pl.pl\",\"PhoneNumber\":\"123456789\",\"ProfilePicture\":null,\"AddressID\":19,\"ProfessionalSummary\":null,\"CurrentJobPositionID\":11,\"CurrentJobPositionDescription\":\" ༼ つ ◕_◕ ༽つ\",\"Skills\":null,\"ProfilePictureURL\":\"http://localhost:2137/uploads/b0d72904-f19f-4946-b40f-7dc3183626dd.gif\",\"Companies\":[{\"ID\":1,\"ProfileID\":59,\"CompanyID\":19,\"HierarchyID\":null,\"Company\":{\"ID\":19,\"Name\":\"Super Dluga nazwa firmy do sprawdzenia czy to jakos wyglada chociaz nwm\",\"Description\":\"z\",\"Image\":\"http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif\",\"AddressID\":17,\"Address\":{\"ID\":17,\"Address\":\"Jl. Perkebunan Blok Z No. 10, Kecamatan Percut Sei Tuan, Deli Serdang Regency, Sumatera Utara 20371, Indonesia\",\"Longitude\":4,\"Latitude\":99}}}],\"JobPosition\":{\"ID\":11,\"Name\":\"Przedstawiciel Handlowy\"},\"Services\":[{\"ID\":15,\"ProfileID\":59,\"ServiceID\":1,\"Link\":\"https://github.com/KacperMatlag\",\"Service\":{\"ID\":1,\"Name\":\"GitHub\",\"UrlPrefix\":\"https://github.com/\",\"ImageUrl\":\"https://cdn-icons-png.flaticon.com/512/25/25231.png\"}},{\"ID\":17,\"ProfileID\":59,\"ServiceID\":2,\"Link\":\"https://www.linkedin.com/\",\"Service\":{\"ID\":2,\"Name\":\"LinkedIn\",\"UrlPrefix\":\"https://www.linkedin.com/\",\"ImageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png\"}}],\"Address\":{\"ID\":19,\"Address\":\"Podegrodzie 3, 33-386 Gmina Podegrodzie, Poland\",\"Longitude\":50,\"Latitude\":21},\"Languages\":[{\"ID\":38,\"LanguageID\":22,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":22,\"Name\":\"Słowacki\"}},{\"ID\":39,\"LanguageID\":8,\"Level\":\"A2\",\"ProfileID\":59,\"Language\":{\"ID\":8,\"Name\":\"Chiński\"}},{\"ID\":40,\"LanguageID\":16,\"Level\":\"C2\",\"ProfileID\":59,\"Language\":{\"ID\":16,\"Name\":\"Duński\"}},{\"ID\":41,\"LanguageID\":1,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":1,\"Name\":\"Angielski\"}},{\"ID\":42,\"LanguageID\":10,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":10,\"Name\":\"Arabski\"}},{\"ID\":43,\"LanguageID\":17,\"Level\":\"B1\",\"ProfileID\":59,\"Language\":{\"ID\":17,\"Name\":\"Turecki\"}}],\"Education\":[{\"ID\":26,\"SchoolName\":\"ZSTIO Limanowa\",\"City\":\"Limanowa\",\"FieldOfStudy\":\"Technik Programista\",\"StartDate\":2019,\"EndDate\":2025,\"ProfileID\":59,\"SchoolType\":3,\"schoolType\":{\"ID\":3,\"Name\":\"Technikum\"}},{\"ID\":28,\"SchoolName\":\"WSEI\",\"City\":\"Kraków\",\"FieldOfStudy\":\"Informatyka\",\"StartDate\":2026,\"EndDate\":null,\"ProfileID\":59,\"SchoolType\":5,\"schoolType\":{\"ID\":5,\"Name\":\"Uczelnia wyższa\"}},{\"ID\":29,\"SchoolName\":\"Szkoła podstawowa\",\"City\":\"Młynne\",\"FieldOfStudy\":null,\"StartDate\":2012,\"EndDate\":2019,\"ProfileID\":59,\"SchoolType\":1,\"schoolType\":{\"ID\":1,\"Name\":\"Szkoła podstawowa\"}}],\"Course\":[{\"ID\":1,\"Name\":\"Kurs c++\",\"Organizer\":\"Super organizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59},{\"ID\":2,\"Name\":\"Super Kurs\",\"Organizer\":\"Super Ogranizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59}]}}}'),
-('vwHCzHaYK8hkrCyI5-QUFv_XCIU9J82Z', 1715508850, '{\"cookie\":{\"originalMaxAge\":1800000,\"expires\":\"2024-05-12T09:44:10.014Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"ID\":59,\"Login\":\"Login\",\"ProfileID\":59,\"Profile\":{\"ID\":59,\"Name\":\"Michał\",\"Surname\":\"Potrzebny\",\"DateOfBirth\":\"2024-02-11\",\"Email\":\"a@pl.pl\",\"PhoneNumber\":\"123456789\",\"ProfilePicture\":null,\"AddressID\":19,\"ProfessionalSummary\":null,\"CurrentJobPositionID\":11,\"CurrentJobPositionDescription\":\" ༼ つ ◕_◕ ༽つ\",\"Skills\":null,\"ProfilePictureURL\":\"http://localhost:2137/uploads/b0d72904-f19f-4946-b40f-7dc3183626dd.gif\",\"Companies\":[{\"ID\":1,\"ProfileID\":59,\"CompanyID\":19,\"HierarchyID\":null,\"Company\":{\"ID\":19,\"Name\":\"Super Dluga nazwa firmy do sprawdzenia czy to jakos wyglada chociaz nwm\",\"Description\":\"z\",\"Image\":\"http://localhost:2137/uploads/9c40b768-d0a1-4016-a911-38b3ec3186ee.gif\",\"AddressID\":17,\"Address\":{\"ID\":17,\"Address\":\"Jl. Perkebunan Blok Z No. 10, Kecamatan Percut Sei Tuan, Deli Serdang Regency, Sumatera Utara 20371, Indonesia\",\"Longitude\":4,\"Latitude\":99}}}],\"JobPosition\":{\"ID\":11,\"Name\":\"Przedstawiciel Handlowy\"},\"Services\":[{\"ID\":15,\"ProfileID\":59,\"ServiceID\":1,\"Link\":\"https://github.com/KacperMatlag\",\"Service\":{\"ID\":1,\"Name\":\"GitHub\",\"UrlPrefix\":\"https://github.com/\",\"ImageUrl\":\"https://cdn-icons-png.flaticon.com/512/25/25231.png\"}},{\"ID\":17,\"ProfileID\":59,\"ServiceID\":2,\"Link\":\"https://www.linkedin.com/\",\"Service\":{\"ID\":2,\"Name\":\"LinkedIn\",\"UrlPrefix\":\"https://www.linkedin.com/\",\"ImageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png\"}}],\"Address\":{\"ID\":19,\"Address\":\"Podegrodzie 3, 33-386 Gmina Podegrodzie, Poland\",\"Longitude\":50,\"Latitude\":21},\"Languages\":[{\"ID\":38,\"LanguageID\":22,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":22,\"Name\":\"Słowacki\"}},{\"ID\":39,\"LanguageID\":8,\"Level\":\"A2\",\"ProfileID\":59,\"Language\":{\"ID\":8,\"Name\":\"Chiński\"}},{\"ID\":40,\"LanguageID\":16,\"Level\":\"C2\",\"ProfileID\":59,\"Language\":{\"ID\":16,\"Name\":\"Duński\"}},{\"ID\":41,\"LanguageID\":1,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":1,\"Name\":\"Angielski\"}},{\"ID\":42,\"LanguageID\":10,\"Level\":\"A1\",\"ProfileID\":59,\"Language\":{\"ID\":10,\"Name\":\"Arabski\"}},{\"ID\":43,\"LanguageID\":17,\"Level\":\"B1\",\"ProfileID\":59,\"Language\":{\"ID\":17,\"Name\":\"Turecki\"}}],\"Education\":[{\"ID\":26,\"SchoolName\":\"ZSTIO Limanowa\",\"City\":\"Limanowa\",\"FieldOfStudy\":\"Technik Programista\",\"StartDate\":2019,\"EndDate\":2025,\"ProfileID\":59,\"SchoolType\":3,\"schoolType\":{\"ID\":3,\"Name\":\"Technikum\"}},{\"ID\":28,\"SchoolName\":\"WSEI\",\"City\":\"Kraków\",\"FieldOfStudy\":\"Informatyka\",\"StartDate\":2026,\"EndDate\":null,\"ProfileID\":59,\"SchoolType\":5,\"schoolType\":{\"ID\":5,\"Name\":\"Uczelnia wyższa\"}},{\"ID\":29,\"SchoolName\":\"Szkoła podstawowa\",\"City\":\"Młynne\",\"FieldOfStudy\":null,\"StartDate\":2012,\"EndDate\":2019,\"ProfileID\":59,\"SchoolType\":1,\"schoolType\":{\"ID\":1,\"Name\":\"Szkoła podstawowa\"}}],\"Course\":[{\"ID\":1,\"Name\":\"Kurs c++\",\"Organizer\":\"Super organizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59},{\"ID\":2,\"Name\":\"Super Kurs\",\"Organizer\":\"Super Ogranizator\",\"StartDate\":\"2024-04-29T00:00:00.000Z\",\"EndDate\":\"2024-05-05T00:00:00.000Z\",\"ProfileID\":59}]}}}');
+('eVderFn11yg51acYTpXISlG-kNd14XZY', 1717448557, '{\"cookie\":{\"originalMaxAge\":1800000,\"expires\":\"2024-06-03T20:59:37.353Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"ID\":79,\"Login\":\"LubiePlacki\",\"ProfileID\":78,\"Profile\":{\"ID\":78,\"Name\":\"Marcinek\",\"Surname\":\"Nowak\",\"DateOfBirth\":\"2024-05-05\",\"Email\":\"Nowak@pl.pl\",\"PhoneNumber\":\"321321321\",\"ProfilePicture\":null,\"AddressID\":22,\"ProfessionalSummary\":null,\"CurrentJobPositionID\":15,\"CurrentJobPositionDescription\":\"OPIS JAKIS\",\"Skills\":null,\"ProfilePictureURL\":\"http://localhost:2137/uploads/8ac29b37-4db5-4224-8994-5656fa496fc6.gif\",\"Applications\":[],\"Employment\":[],\"Companies\":[{\"ID\":5,\"ProfileID\":78,\"CompanyID\":26,\"HierarchyID\":null,\"Company\":{\"ID\":26,\"Name\":\"123\",\"Description\":\"123\",\"Image\":null,\"AddressID\":23,\"Address\":{\"ID\":23,\"Address\":\"TX-123 Bus, Seguin, TX 78155\",\"Longitude\":30,\"Latitude\":-98}}},{\"ID\":11,\"ProfileID\":78,\"CompanyID\":32,\"HierarchyID\":null,\"Company\":{\"ID\":32,\"Name\":\"ZSTIO firma\",\"Description\":\"ZSTIO firma\",\"Image\":\"http://localhost:2137/uploads/b96af248-18c1-4d7b-8999-9606ebff2f3a.gif\",\"AddressID\":27,\"Address\":{\"ID\":27,\"Address\":\"Leśna 67, 34-600 Limanowa, Polska\",\"Longitude\":50,\"Latitude\":20}}}],\"JobPosition\":{\"ID\":15,\"Name\":\"Specjalista ds. HR\"},\"Services\":[{\"ID\":22,\"ProfileID\":78,\"ServiceID\":2,\"Link\":\"https://www.linkedin.com/Potrzebny321\",\"Service\":{\"ID\":2,\"Name\":\"LinkedIn\",\"UrlPrefix\":\"https://www.linkedin.com/\",\"ImageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png\"}},{\"ID\":23,\"ProfileID\":78,\"ServiceID\":1,\"Link\":\"https://github.com/KacperMatlag\",\"Service\":{\"ID\":1,\"Name\":\"GitHub\",\"UrlPrefix\":\"https://github.com/\",\"ImageUrl\":\"https://cdn-icons-png.flaticon.com/512/25/25231.png\"}}],\"Address\":{\"ID\":22,\"Address\":\"Siekierczyna 234, 34-600 Limanowa Gmina, Poland\",\"Longitude\":50,\"Latitude\":20},\"Languages\":[{\"ID\":56,\"LanguageID\":22,\"Level\":\"B2\",\"ProfileID\":78,\"Language\":{\"ID\":22,\"Name\":\"Słowacki\"}},{\"ID\":57,\"LanguageID\":5,\"Level\":\"B2\",\"ProfileID\":78,\"Language\":{\"ID\":5,\"Name\":\"Hiszpański\"}},{\"ID\":58,\"LanguageID\":9,\"Level\":\"C2\",\"ProfileID\":78,\"Language\":{\"ID\":9,\"Name\":\"Japoński\"}}],\"Education\":[{\"ID\":30,\"SchoolName\":\"Jakas Szkola\",\"City\":\"cos\",\"FieldOfStudy\":\"Kierunek\",\"StartDate\":1999,\"EndDate\":2010,\"ProfileID\":78,\"SchoolType\":2,\"schoolType\":{\"ID\":2,\"Name\":\"Liceum\"}},{\"ID\":31,\"SchoolName\":\"Szkola2\",\"City\":\"Miasto2\",\"FieldOfStudy\":\"Kierunek2\",\"StartDate\":20011,\"EndDate\":2022,\"ProfileID\":78,\"SchoolType\":3,\"schoolType\":{\"ID\":3,\"Name\":\"Technikum\"}}],\"Course\":[]}}}');
 
 -- --------------------------------------------------------
 
@@ -563,7 +599,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
-(59, 'Login', '$2a$10$U8t.NBd0U5oWmQCwb9VNZ..RP.Q2./pZvzBscS9ubeuZP4Vk/2KpO', 59),
+(59, 'Login', '$2a$10$ox4qhLfjaGxLfANaXL8xZOYLA4KikMvdVi7nW/Qd2ojCR7t5uxjHC', 59),
 (60, 'JakisLogin', '$2a$10$MTizb71CMK.zIIbdxWTXFeFjGkBQ2pMGz51TnsUKDTjN8EzXQZdT.', 60),
 (61, 'JakiesImie', '$2a$10$G6fSdzipXAFmR29aB.P7YeS7AIjbiAYHx7Gctvll/sk9G5IMpdonC', 61),
 (70, 'JAKISREGISTER', '$2a$10$2qY/TgQGOVrlP6zxfyaiCeTc8/AGSVOpEmcB8AmvV1YUnCv006KxG', 68),
@@ -573,7 +609,10 @@ INSERT INTO `user` (`ID`, `Login`, `Password`, `ProfileID`) VALUES
 (74, 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', 73),
 (75, 'ZZZZZZZZZZZ', '$2a$10$.pLJQOcNqS48NT0x6EXGh.Rzt3p6SwHwrvC1xQQVawsuR08u.8m0e', 74),
 (76, 'testowe', '$2a$10$pYOi3eZ..EsQtKAIj6vABeVkmrK/M.S2u1wMGUSV.lVXauyQ8yIqq', 75),
-(77, 'Login2', '$2a$10$BIUleDK3R6Rw7kQwqsj5h.Q0tOouOcudfoBGcoe6c6KnptfX7PxaW', 76);
+(77, 'Login2', '$2a$10$BIUleDK3R6Rw7kQwqsj5h.Q0tOouOcudfoBGcoe6c6KnptfX7PxaW', 76),
+(78, 'SuperLogin123', '$2a$10$0eNNwCWxgHk4yGnaNQXAAe7D0B1Qf.dQC4SVuQYCcMPqKy0Hjh9zu', 77),
+(79, 'LubiePlacki', '$2a$10$GIyGrPTZgl2aqoK5QR4Mdu25CkOexZmDknr5Dd9n4YPud82/FVFJ6', 78),
+(80, 'Testowe123', '$2a$10$zbiCiHYvpI/EYf6Y97sp8eXHmRqNxgtprILl3ojJNjG8m.StsZgMC', 79);
 
 -- --------------------------------------------------------
 
@@ -608,7 +647,17 @@ INSERT INTO `useraddress` (`ID`, `Address`, `Longitude`, `Latitude`) VALUES
 (16, 'Jalan Sungai Burung AA 32/AA, 40460 Kelang, Selangor, Malaysia', 3, 102),
 (17, 'Jl. Perkebunan Blok Z No. 10, Kecamatan Percut Sei Tuan, Deli Serdang Regency, Sumatera Utara 20371, Indonesia', 4, 99),
 (18, 'Pasternik 26, 31-354 Cracow, Poland', 50, 20),
-(19, 'Podegrodzie 3, 33-386 Gmina Podegrodzie, Poland', 50, 21);
+(19, 'Podegrodzie 3, 33-386 Gmina Podegrodzie, Poland', 50, 21),
+(20, 'Leśna 23, 34-600 Limanowa, Polska', 50, 20),
+(21, 'Dworna 34, 30-244 Cracow, Poland', 50, 20),
+(22, 'Siekierczyna 234, 34-600 Limanowa Gmina, Poland', 50, 20),
+(23, 'TX-123 Bus, Seguin, TX 78155', 30, -98),
+(24, 'A-455, 41450 Constantina, Seville, Spain', 38, -6),
+(25, 'Węgierska 123, 33-300 Nowy Sącz, Polska', 50, 21),
+(26, 'Put za Paleru, 52100 Ližnjan, Hrvatska', 45, 14),
+(27, 'Leśna 67, 34-600 Limanowa, Polska', 50, 20),
+(28, 'Hamburger Straße, Bremen, Germany', 53, 9),
+(29, 'Leśna 32, 34-600 Limanowa, Polska', 50, 20);
 
 -- --------------------------------------------------------
 
@@ -652,12 +701,15 @@ CREATE TABLE `userlanguages` (
 --
 
 INSERT INTO `userlanguages` (`ID`, `LanguageID`, `Level`, `ProfileID`) VALUES
-(38, 22, 'A1', 59),
-(39, 8, 'A2', 59),
-(40, 16, 'C2', 59),
 (41, 1, 'A1', 59),
-(42, 10, 'A1', 59),
-(43, 17, 'B1', 59);
+(56, 22, 'B2', 78),
+(57, 5, 'B2', 78),
+(58, 9, 'C2', 78),
+(59, 1, 'A1', 79),
+(60, 8, 'C2', 59),
+(61, 5, 'B2', 59),
+(62, 15, 'B2', 59),
+(63, 11, 'B2', 59);
 
 -- --------------------------------------------------------
 
@@ -677,8 +729,11 @@ CREATE TABLE `userlinks` (
 --
 
 INSERT INTO `userlinks` (`ID`, `ProfileID`, `ServiceID`, `Link`) VALUES
-(15, 59, 1, 'https://github.com/KacperMatlag'),
-(17, 59, 2, 'https://www.linkedin.com/');
+(15, 59, 1, 'https://www.linkedin.com/Potrzebny321'),
+(20, 59, 2, '123'),
+(22, 78, 2, 'https://www.linkedin.com/Potrzebny321'),
+(23, 78, 1, 'https://github.com/KacperMatlag'),
+(25, 79, 1, 'https://github.com/KacperMatlag');
 
 -- --------------------------------------------------------
 
@@ -710,7 +765,13 @@ CREATE TABLE `userwithcompanies` (
 --
 
 INSERT INTO `userwithcompanies` (`ID`, `ProfileID`, `CompanyID`, `HierarchyID`) VALUES
-(1, 59, 19, NULL);
+(1, 59, 19, NULL),
+(3, 77, 24, NULL),
+(4, 77, 25, NULL),
+(6, 59, 27, NULL),
+(9, 79, 30, NULL),
+(14, 59, 35, NULL),
+(15, 59, 36, NULL);
 
 -- --------------------------------------------------------
 
@@ -871,6 +932,12 @@ ALTER TABLE `education`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `SchoolType` (`SchoolType`),
   ADD KEY `ProfileID` (`ProfileID`);
+
+--
+-- Indeksy dla tabeli `employment`
+--
+ALTER TABLE `employment`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indeksy dla tabeli `experience`
@@ -1039,13 +1106,13 @@ ALTER TABLE `worktype`
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `application`
 --
 ALTER TABLE `application`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `categorywithpositions`
@@ -1057,7 +1124,7 @@ ALTER TABLE `categorywithpositions`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -1069,13 +1136,19 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `duties`
 --
 ALTER TABLE `duties`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `education`
 --
 ALTER TABLE `education`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `employment`
+--
+ALTER TABLE `employment`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `experience`
@@ -1105,13 +1178,13 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `requirements`
 --
 ALTER TABLE `requirements`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `schooltype`
@@ -1141,13 +1214,13 @@ ALTER TABLE `typeofcontract`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `useraddress`
 --
 ALTER TABLE `useraddress`
-  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `usereducation`
@@ -1165,13 +1238,13 @@ ALTER TABLE `userexperience`
 -- AUTO_INCREMENT for table `userlanguages`
 --
 ALTER TABLE `userlanguages`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `userlinks`
 --
 ALTER TABLE `userlinks`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `usertraining`
@@ -1183,7 +1256,7 @@ ALTER TABLE `usertraining`
 -- AUTO_INCREMENT for table `userwithcompanies`
 --
 ALTER TABLE `userwithcompanies`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `whattheemployeroffers`
